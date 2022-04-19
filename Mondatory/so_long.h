@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:18:24 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/16 01:46:41 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/18 03:51:29 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct s_map {
 	
 	int		fd;
-	char	**map;
 	int		i;
 	int		tmp;
 	int		tmp2;
