@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:18:24 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/18 03:51:29 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/19 15:59:01 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@
 # include <fcntl.h>
 
 typedef struct s_map {
-	
 	int		fd;
 	int		i;
 	int		tmp;
 	int		tmp2;
 	int		line;
-	char 	**map;
-	
+	char	**map;
 }				t_map;
 
 void	check_extention(char	*av);
