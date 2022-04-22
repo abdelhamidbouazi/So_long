@@ -6,11 +6,11 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:13:05 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/22 13:35:12 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/22 16:52:20 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	rectungular(char	**map)
 {

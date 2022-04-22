@@ -6,11 +6,11 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:18:31 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/19 17:01:05 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/22 16:52:21 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	upline(char	**map)
 {
