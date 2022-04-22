@@ -6,14 +6,77 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:18:31 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/19 16:24:15 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/19 17:01:05 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	checkone(char	**map)
+int	upline(char	**map)
 {
-	
+	int	i;
+
+	i = 0;
+	while (map[0][i])
+	{
+		if (map[0][i] != '1')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
+int	bottomline(char	**map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (map[i])
+		i++;
+	while (map[i - 1][j])
+	{
+		if (map[i - 1][j] != '1')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	leftline(char	**map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		if (map[i][0] != '1')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	rightline(char	**map)
+{
+	int	i;
+	
+	i = 0;
+	while (map[i])
+	{
+		if (map[i][ft_strlen(map[i]) - 1] !='1')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	checkone(char	**map)
+{
+	if (!upline(map) && !bottomline(map)
+		&& !leftline(map) && !rightline(map))
+		return (0);
+	write(1, "not surronded by walls", 23);
+	return (1);
+}

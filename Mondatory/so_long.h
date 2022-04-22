@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:18:24 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/19 15:59:01 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/22 13:18:12 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ typedef struct s_map {
 	int		tmp2;
 	int		line;
 	char	**map;
+	size_t	len;
+	int		c;
+	int		e;
+	int		p;
+	int		j;
+	
+	
 }				t_map;
 
 void	check_extention(char	*av);
