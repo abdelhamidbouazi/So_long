@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 03:10:10 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 16:11:32 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 17:23:18 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,25 +84,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	tab[i] = '\0';
 	free(s1);
 	return (tab);
-}
-void	ft_strcpy(char *dst, const char *src)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = 0;
-}
-
-void	ft_bzero(char *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (n > i)
-		s[i++] = 0;
 }

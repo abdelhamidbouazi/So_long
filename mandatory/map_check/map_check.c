@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 05:14:27 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 16:19:23 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 16:54:21 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**map_fill(char	**av)
 	while (++m.i < m.line)
 		m.map[m.i] = get_next_line(m.fd);
 	m.i = -1;
-	while (++m.i < m.line)
+	while (++m.i < m.line - 1)
 	{
 		m.tmp2 = m.map[m.i];
 		m.map[m.i] = ft_substr(m.tmp2, 0, ft_strlen(m.tmp2) - 1);

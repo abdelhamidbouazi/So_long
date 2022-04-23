@@ -6,13 +6,13 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:13:05 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 16:05:56 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 17:01:28 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	rectungular(char	**map)
+int	rectungular(char **map)
 {
 	t_map	data;
 	
@@ -22,7 +22,7 @@ int	rectungular(char	**map)
 	{
 		if(data.len != ft_strlen(map[data.i]))
 		{
-			write(2, "not rectungular", 16);
+			write(1, "not rectungular", 16);
 			return (1);
 		}
 		data.i++;
@@ -86,7 +86,7 @@ int	imposters(char	**map)
 int	map_checking(char	**map)
 {
 	if (!rectungular(map) && !component(map)
-		&& imposters(map) && !checkone(map))
+		&& !imposters(map) && !checkone(map))
 		return (1);
 	return (0);
 }

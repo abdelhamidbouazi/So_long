@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:18:24 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 16:22:06 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 17:25:22 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define D 2
 # define W 13
 # define ESC 53
+# define BUFFER_SIZE 1
 
 # include <mlx.h>
 # include <stdio.h>
@@ -105,6 +106,5 @@ void 	move_down(t_game *g);
 int		coin_count(t_game	*g);
 char	*ft_strchr(const char *s, int c);
 void	ft_strcpy(char *dst, const char *src);
-void	ft_bzero(char *s, size_t n);
 
 #endif
