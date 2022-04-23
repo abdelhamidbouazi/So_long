@@ -6,98 +6,55 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 21:25:32 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/22 16:52:25 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 16:10:46 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-char	*ft_read(char *leftxt, int fd)
+static int	ft_read_fd(int fd, char **line)
 {
-	char	*buffer;
-	int		size;
+	static char	buff[1];
+	int			ret;
+	size_t		len;
 
-	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
-		return (NULL);
-	size = 1;
-	while (!ft_strchr(leftxt, '\n') && size > 0)
+	if (buff[0] == '\0')
 	{
-		size = read(fd, buffer, BUFFER_SIZE);
-		if (size == -1)
+		ret = read(fd, buff, 1);
+		buff[ret] = '\0';
+		if (ret < 1)
 		{
-			free(buffer);
-			return (NULL);
+			if (ret == -1)
+				ft_bzero(*line, 1);
+			return (0);
 		}
-		buffer[size] = 0;
-		leftxt = ft_strjoin(leftxt, buffer);
 	}
-	free(buffer);
-	return (leftxt);
-}
-
-char	*ft_get_line(char	*leftxt)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	if (!leftxt[i])
-		return (NULL);
-	while (leftxt[i] && leftxt[i] != '\n')
-		i++;
-	str = (char *)malloc((i + 2) * sizeof(char));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (leftxt[i] && leftxt[i] != '\n')
-	{
-		str[i] = leftxt[i];
-		i++;
-	}
-	if (leftxt[i] == '\n')
-		str[i++] = '\n';
-	str[i] = 0;
-	return (str);
-}
-
-char	*ft_stock(char *leftxt)
-{
-	int		i;
-	int		j;
-	char	*str;
-
-	i = 0;
-	j = 0;
-	while (leftxt[i] && leftxt[i] != '\n')
-		i++;
-	if (!leftxt[i])
-	{
-		free(leftxt);
-		return (NULL);
-	}
-	str = (char *)malloc((ft_strlen(leftxt) - i + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	i++;
-	while (leftxt[i])
-		str[j++] = leftxt[i++];
-	str[j] = 0;
-	free(leftxt);
-	return (str);
+	len = 0;
+	while (buff[len] && buff[len] != '\n')
+		len++;
+	if (buff[len] == '\n')
+		len++;
+	*line = ft_strjoin(*line, buff);
+	ft_strcpy(buff, &buff[len]);
+	return (1);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*leftxt;
-	char		*line;
+	char	*l;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	l = malloc(1);
+	if (!l)
+		return (NULL);
+	l[0] = '\0';
+	while (!ft_strchr(l, '\n'))
+		if (!ft_read_fd(fd, &l))
+			break ;
+	if (l[0] == '\0')
+	{
+		free (l);
 		return (0);
-	leftxt = ft_read(leftxt, fd);
-	if (!leftxt)
-		return (0);
-	line = ft_get_line(leftxt);
-	leftxt = ft_stock(leftxt);
-	return (line);
+	}
+	return (l);
 }
+

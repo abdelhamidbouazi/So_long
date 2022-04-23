@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:13:05 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/22 16:52:20 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 16:05:56 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,24 +61,24 @@ int	component(char	**map)
 
 int	imposters(char	**map)
 {
-	t_map	char;
+	t_map	chara;
 	
-	char.i = 0;
-	while (map[char.i])
+	chara.i = 0;
+	while (map[chara.i])
 	{
-		char.j = 0;
-		while (map[char.i][char.j])
+		chara.j = 0;
+		while (map[chara.i][chara.j])
 		{
-			if (map[char.i][char.j] != 'E' && map[char.i][char.j] != 'C'
-				map[char.i][char.j] != '0' && ma[char.i][char.j] != '1'
-				&& map[char.i][char.j] != 'P')
+			if (map[chara.i][chara.j] != 'E' && map[chara.i][chara.j] != 'C'
+					&& map[chara.i][chara.j] != '0' && map[chara.i][chara.j] != '1'
+					&& map[chara.i][chara.j] != 'P')
 			{
 				write(2, "invalid characters", 19);
 				return (1);
 			}
-			char.j++;
+			chara.j++;
 		}
-		char.i++;
+		chara.i++;
 	}
 	return (0);
 }

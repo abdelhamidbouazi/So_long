@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 05:14:27 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/22 17:04:52 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/23 16:19:23 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	check_extention(char *av)
 	size_t	i;
 
 	i = ft_strlen(av);
-	if(av[i - 1] == "r" && av[i - 2] == "e" \
-	&& av[i - 3] == "b" && av[i - 4] == ".")
+	if(av[i - 1] == 'r' && av[i - 2] == 'e' \
+		&& av[i - 3] == 'b' && av[i - 4] == '.')
 	{
 		return ;
 	}
