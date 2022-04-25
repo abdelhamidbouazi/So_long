@@ -2,6 +2,8 @@ NAME = so_long
 
 CFLAGS = -Wall -Wextra -Werror -Imlx
 
+PRINTF = ft_printf/libftprintf.a
+
 SRC =  mandatory/game/free.c \
 		mandatory/game/player_position.c \
 		mandatory/game/player_move.c \
@@ -18,20 +20,24 @@ SRC =  mandatory/game/free.c \
 
 OBJ = $(SRC:.c=.o)
 
-OBJ_B = $(SRC_B:.c=.o)
-
 $(NAME) : $(OBJ) $(PRINTF) mandatory/so_long.h
 	@echo "Making so_long"
 	@$(CC) $(OBJ) $(PRINTF) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+
+$(PRINTF) :
+	@echo "Making ft_printf"
+	@make -C ft_printf
 
 all : $(NAME)
 
 clean :
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ_B)
+	@make -C ft_printf clean
 
 fclean : clean
 	@rm -rf $(NAME)
 	@rm -rf $(NAME_B)
+	@make -C ft_printf fclean
 
 re : fclean all

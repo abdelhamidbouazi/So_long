@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:18:24 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 17:25:22 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/25 00:22:19 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_game {
 	int		y;
 }				t_game;
 
+int		ft_printf(const char *str, ...);
 void	check_extention(char	*av);
 char	**map_fill(char	**av);
 int 	num_of_lines(char **av);
