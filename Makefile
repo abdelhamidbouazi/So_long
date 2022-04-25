@@ -25,19 +25,17 @@ $(NAME) : $(OBJ) $(PRINTF) mandatory/so_long.h
 	@$(CC) $(OBJ) $(PRINTF) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(PRINTF) :
-	@echo "Making ft_printf"
+	@@echo "Making ft_printf"
 	@make -C ft_printf
 
 all : $(NAME)
 
 clean :
 	@rm -rf $(OBJ)
-	@rm -rf $(OBJ_B)
 	@make -C ft_printf clean
 
 fclean : clean
 	@rm -rf $(NAME)
-	@rm -rf $(NAME_B)
 	@make -C ft_printf fclean
 
 re : fclean all
