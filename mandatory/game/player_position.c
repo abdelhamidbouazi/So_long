@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:03:58 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 15:19:57 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:34:23 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ int	player_y(char	**map)
 	return (0);
 }
 
-int	player_move(int	key, void	*param)
+int	player_move(int key, void *param)
 {
 	t_game	*g;
-	
+
 	g = (t_game *)param;
 	g->x = player_x(g->map);
 	g->y = player_y(g->map);

@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:18:31 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 17:05:03 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:37:33 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	leftline(char	**map)
 int	rightline(char	**map)
 {
 	int	i;
-	
+
 	i = 0;
 	while (map[i])
 	{

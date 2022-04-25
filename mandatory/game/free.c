@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:32:27 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 15:46:43 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/25 16:59:31 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	ft_free(t_game	*g)
 {
 	int	i;
 
-	i = 0;
 	mlx_destroy_image(g->mlx, g->coll);
 	mlx_destroy_image(g->mlx, g->back);
 	mlx_destroy_image(g->mlx, g->exit);
 	mlx_destroy_image(g->mlx, g->play);
 	mlx_destroy_image(g->mlx, g->wall);
+	i = 0;
 	while (g->map[i])
 	{
 		free(g->map[i]);

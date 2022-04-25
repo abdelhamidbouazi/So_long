@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 05:14:27 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/23 16:54:21 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:41:09 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (new_str);
 }
 
-int num_of_lines(char **av)
+int	num_of_lines(char **av)
 {
 	t_map	m;
 
@@ -57,7 +57,7 @@ int num_of_lines(char **av)
 char	**map_fill(char	**av)
 {
 	t_map	m;
-	
+
 	m.line = num_of_lines(av);
 	m.map = (char **)malloc(sizeof(char *) * (m.line + 1));
 	if (!m.map)
@@ -75,9 +75,9 @@ char	**map_fill(char	**av)
 	}
 	m.i++;
 	m.map[m.i] = NULL;
-	if(!m.map)
-		return NULL;
-	return(close(m.fd), m.map);	
+	if (!m.map)
+		return (NULL);
+	return (close(m.fd), m.map);
 }
 
 void	check_extention(char *av)
@@ -85,7 +85,7 @@ void	check_extention(char *av)
 	size_t	i;
 
 	i = ft_strlen(av);
-	if(av[i - 1] == 'r' && av[i - 2] == 'e' \
+	if (av[i - 1] == 'r' && av[i - 2] == 'e' \
 		&& av[i - 3] == 'b' && av[i - 4] == '.')
 	{
 		return ;

@@ -6,7 +6,7 @@
 /*   By: abouazi <abouazi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:18:24 by abouazi           #+#    #+#             */
-/*   Updated: 2022/04/25 00:22:19 by abouazi          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:31:10 by abouazi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define ESC 53
 # define BUFFER_SIZE 1
 
+# define CAN 38
+
 # include <mlx.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -27,7 +29,6 @@
 # include <fcntl.h>
 
 typedef struct s_map {
-	
 	int		fd;
 	int		i;
 	char	*tmp;
@@ -39,12 +40,9 @@ typedef struct s_map {
 	int		e;
 	int		p;
 	int		j;
-	
-	
 }				t_map;
 
 typedef struct s_game {
-	
 	void	*mlx;
 	int		j;
 	int		i;
@@ -67,7 +65,7 @@ typedef struct s_game {
 int		ft_printf(const char *str, ...);
 void	check_extention(char	*av);
 char	**map_fill(char	**av);
-int 	num_of_lines(char **av);
+int		num_of_lines(char **av);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
@@ -88,9 +86,9 @@ int		leftline(char	**map);
 int		rightline(char	**map);
 int		checkone(char	**map);
 int		lines(char	**map);
-void 	mlx_print(t_game *g);
+void	mlx_print(t_game *g);
 void	mlx_start(char	**map);
-int		player_move(int	key, void	*param);
+int		player_move(int key, void *param);
 int		player_y(char	**map);
 int		player_x(char	**map);
 int		coin_count(t_game	*g);
@@ -100,10 +98,10 @@ void	ft_free(t_game	*g);
 int		you_lost(t_game	*g);
 int		you_left(t_game	*g);
 void	ft_free(t_game	*g);
-void 	move_right(t_game *g);
-void 	move_left(t_game *g);
-void 	move_up(t_game *g);
-void 	move_down(t_game *g);
+void	move_right(t_game *g);
+void	move_left(t_game *g);
+void	move_up(t_game *g);
+void	move_down(t_game *g);
 int		coin_count(t_game	*g);
 char	*ft_strchr(const char *s, int c);
 void	ft_strcpy(char *dst, const char *src);
